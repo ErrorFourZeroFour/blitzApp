@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        FLUTTER_HOME = "/Users/kayarci/Tool/flutter/bin/flutter"
+        FLUTTER_HOME = "/Users/kayarci/Tool/flutter/bin/flutter.bat"
     }
 
     stages{
