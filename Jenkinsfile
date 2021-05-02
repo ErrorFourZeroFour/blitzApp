@@ -11,6 +11,13 @@ pipeline {
             }
         }
         
+         stage ('SH TEST') {
+            steps {
+                echo "try to create directory"
+                sh 'mkdir /Users/kayarci/testdir'
+            }
+        }
+        
          stage ('Flutter Doctor') {
             steps {
                 echo "PATH is: $PATH"
