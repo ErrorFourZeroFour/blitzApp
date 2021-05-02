@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PATH = "/Users/kayarci/Tool/flutter/bin"
+        FLUTTER_HOME = "/Users/kayarci/Tool/flutter/bin"
     }
 
     stages{
@@ -20,8 +20,8 @@ pipeline {
         
          stage ('Flutter Doctor') {
             steps {
-                echo "PATH is: $PATH"
-                sh '${PATH} flutter doctor -v'
+                echo "FLUTTER_HOME is: $FLUTTER_HOME"
+                sh '${FLUTTER_HOME} flutter doctor -v'
             }
         }
         
