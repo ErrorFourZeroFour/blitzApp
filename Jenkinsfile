@@ -14,7 +14,7 @@ pipeline {
          stage ('Flutter Doctor') {
             steps {
                 echo "PATH is: $PATH"
-                sh '${PATH} flutter doctor -v'
+                echo sh '${PATH} flutter doctor -v'
             }
         }
         
