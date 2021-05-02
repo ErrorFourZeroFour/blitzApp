@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        PATH = "/Users/kayarci/Tool/flutter:$PATH"
+    }
 
     stages{
           stage('GIT PULL') {
@@ -10,6 +13,7 @@ pipeline {
         
          stage ('Flutter Doctor') {
             steps {
+                echo "PATH is: $PATH"
                 sh "flutter doctor -v"
             }
         }
