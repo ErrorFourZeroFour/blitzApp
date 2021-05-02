@@ -21,7 +21,7 @@ pipeline {
         
         stage('Develop'){
             steps{
-                sh "${FLUTTER_HOME}/flutter build web"
+                sh "${FLUTTER_HOME}/flutter run"
             }
         }
        
