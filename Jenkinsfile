@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages{
+          stage('GIT PULL') {
+            steps {
+                git branch: "main", url: 'https://github.com/ErrorFourZeroFour/blitzApp.git'
+            }
+        }
+        
          stage ('Flutter Doctor') {
             steps {
                 sh "flutter doctor -v"
