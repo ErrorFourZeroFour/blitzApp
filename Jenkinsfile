@@ -21,19 +21,19 @@ pipeline {
         
         stage('Develop'){
             steps{
-                sh "flutter build web --dev"
+                sh "${FLUTTER_HOME}/flutter build web --dev"
             }
         }
        
         stage('Flutter Build Web') {
             steps {
-                sh "flutter build web --release"
+                sh "${FLUTTER_HOME}/flutter build web --release"
             }
         }
 
        stage('Cleanup') {
             steps {
-                sh "flutter clean"
+                sh "${FLUTTER_HOME}/flutter clean"
             }
         }
     }
