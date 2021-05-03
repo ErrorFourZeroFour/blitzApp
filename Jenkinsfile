@@ -1,6 +1,5 @@
 pipeline {
     agent any
-   
 
     stages{
           stage('GIT PULL') {
@@ -19,7 +18,8 @@ pipeline {
         
         stage('Develop'){
             steps{
-                sh "${env.DIRECTORY}/flutter build web "
+                echo "DIRECTORY is: ${env.DIRECTORY}"
+                sh "${env.DIRECTORY}/flutter build web"
             }
         }
        
