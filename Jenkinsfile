@@ -19,7 +19,7 @@ pipeline {
         stage('Develop'){
             steps{
                 echo "DIRECTORY is: ${env.DIRECTORY}"
-                sh "${env.DIRECTORY}/flutter build web"
+                sh "${env.FLUTTER_HOME}/flutter build web ${env.DIRECTORY}"
             }
         }
        
