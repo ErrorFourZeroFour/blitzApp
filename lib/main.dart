@@ -117,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               "Blitzerliste",
                               textAlign: TextAlign.start,
                               style: TextStyle(
-                                  fontSize: 25,
+                                  fontSize: 30,
                                   color: Colors.white),
                             ),
                           ))
