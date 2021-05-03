@@ -27,15 +27,16 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
-  final imagePath1 = 'res/images/firsttry.jpeg';
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final imagePath1 = 'res/images/firsttry.jpeg';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,11 +50,11 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                   flex: 2,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                         horizontal: 5, vertical: 5),
                     child: Stack(
                       children: [
-                        Image.asset(widget.imagePath1),
+                        Image.asset(imagePath1),
                         Positioned(
                           bottom: 0,
                           child: Container(
@@ -61,17 +62,13 @@ class _MyHomePageState extends State<MyHomePage> {
                             decoration: BoxDecoration(
                               color: Colors.black,
                               gradient: LinearGradient(
-                                  begin:
-                                      Alignment.centerLeft,
-                                  end:
-                                      Alignment.centerRight,
                                   colors: [
                                     Colors.black,
                                     Colors.black
                                         .withOpacity(0.3)
                                   ]),
                             ),
-                            child: Text(
+                            child: const Text(
                               "Blitzer melden!",
                               textAlign: TextAlign.start,
                               style: TextStyle(
@@ -92,6 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Stack(
                     children: [
+                      // ignore: sized_box_for_whitespace
                       Container(
                         height: 150,
                         child: Image.asset(
@@ -103,17 +101,13 @@ class _MyHomePageState extends State<MyHomePage> {
                             decoration: BoxDecoration(
                               color: Colors.black,
                               gradient: LinearGradient(
-                                  begin:
-                                      Alignment.centerLeft,
-                                  end:
-                                      Alignment.centerRight,
                                   colors: [
                                     Colors.black,
                                     Colors.black
                                         .withOpacity(0.3)
                                   ]),
                             ),
-                            child: Text(
+                            child: const Text(
                               "Blitzerliste",
                               textAlign: TextAlign.start,
                               style: TextStyle(

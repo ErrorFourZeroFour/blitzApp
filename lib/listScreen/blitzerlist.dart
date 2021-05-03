@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 class BlitzerListe extends StatefulWidget {
@@ -12,23 +10,20 @@ class BlitzerListe extends StatefulWidget {
 class _BlitzerListeState extends State<BlitzerListe> {
   @override
   Widget build(BuildContext context) {
-    BlitzerItem number2 = BlitzerItem(
-        "2", false, DateTime.now(), "Blitzer am Seepark!");
-    BlitzerItem number1 = BlitzerItem(
-        "1", false, DateTime.now(), "Blitzer am Seepark!");
-    BlitzerItem number3 = BlitzerItem(
-        "3", true, DateTime.now(), "Blitzer am Seepark!");
-    BlitzerItem number4 = BlitzerItem(
-        "4", false, DateTime.now(), "Blitzer am Seepark!");
+    // ignore: deprecated_member_use
+    final List<BlitzerItem> list = new List<BlitzerItem>();
+    list.add(BlitzerItem(
+        "2", false, DateTime.now(), "Blitzer am Seepark!"));
+    list.add(BlitzerItem(
+        "1", false, DateTime.now(), "Blitzer am Seepark!"));
+    list.add(BlitzerItem(
+        "3", true, DateTime.now(), "Blitzer am Seepark!"));
+    list.add(BlitzerItem(
+        "4", false, DateTime.now(), "Blitzer am Seepark!"));
 
-    List<BlitzerItem> list = new List<BlitzerItem>();
-    list.add(number1);
-    list.add(number2);
-    list.add(number3);
-    list.add(number4);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Blitzerliste"),
+        title: const Text("Blitzerliste"),
       ),
       body: Container(
         child: ListView.builder(
@@ -52,12 +47,9 @@ class BlitzerItem extends StatefulWidget {
   String description;
   bool expand;
 
-  BlitzerItem(id, expand, blitzdate, description) {
-    this.blitzdate = blitzdate;
-    this.id = id;
-    this.expand = expand;
-    this.description = description;
-  }
+  // ignore: avoid_positional_boolean_parameters
+  BlitzerItem(this.id, this.expand, this.blitzdate,
+      this.description);
 
   @override
   _BlitzerItemState createState() => _BlitzerItemState();
@@ -66,24 +58,25 @@ class BlitzerItem extends StatefulWidget {
 class _BlitzerItemState extends State<BlitzerItem> {
   @override
   Widget build(BuildContext context) {
+    // ignore: avoid_positional_boolean_parameters
     void setExpand(bool expand) {
       setState(() {
-        this.widget.expand = expand;
+        widget.expand = expand;
       });
     }
 
     return ListTile(
-      title: Text(this.widget.blitzdate.toString()),
-      subtitle: Text(this.widget.description),
-      leading: Text(this.widget.id),
+      title: Text(widget.blitzdate.toString()),
+      subtitle: Text(widget.description),
+      leading: Text(widget.id),
       trailing: IconButton(
         icon: Icon(
-          this.widget.expand
+          widget.expand
               ? Icons.expand_less
               : Icons.expand_more,
         ),
         onPressed: () {
-          if (this.widget.expand) {
+          if (widget.expand) {
             setExpand(false);
           } else {
             setExpand(true);

@@ -17,14 +17,14 @@ class _MainDrawerState extends State<MainDrawer> {
           itemCount: 3,
           itemBuilder: (item, ctx) {
             return ListTile(
-              trailing: Icon(
+              trailing: const Icon(
                 Icons.access_alarm,
                 color: Colors.white,
               ),
               onTap: () {
                 Navigator.of(context).pop();
               },
-              title: Text(
+              title: const Text(
                 "Bist du Müde?",
                 style: TextStyle(
                   color: Colors.white,
