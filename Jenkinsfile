@@ -18,8 +18,6 @@ pipeline {
         
         stage('Develop'){
             steps{
-                echo "DIRECTORY is: ${env.DIRECTORY}"
-                sh "cd /Users/kayarci/Desktop/blitzApp/blitzapp"
                 sh "${env.FLUTTER_HOME}/flutter build web"
             }
         }
