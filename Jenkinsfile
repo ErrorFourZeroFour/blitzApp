@@ -21,7 +21,7 @@ pipeline {
         
         stage('Develop'){
             steps{
-                sh "${FLUTTER_HOME}/flutter run"
+                sh "${FLUTTER_HOME}/flutter build create"
             }
         }
        
