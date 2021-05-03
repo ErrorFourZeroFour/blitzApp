@@ -4,7 +4,7 @@ pipeline {
     stages{
           stage('GIT PULL') {
             steps {
-                git branch: "main", url: 'https://github.com/ErrorFourZeroFour/blitzApp.git'
+                git branch: "develop", url: 'https://github.com/ErrorFourZeroFour/blitzApp.git'
             }
         }
         
