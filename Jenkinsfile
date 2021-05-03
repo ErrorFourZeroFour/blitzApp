@@ -19,7 +19,7 @@ pipeline {
         
         stage('Develop'){
             steps{
-                sh "${FLUTTER_HOME}/flutter build create"
+                sh "${env.FLUTTER_HOME}/flutter build developV123"
             }
         }
        
