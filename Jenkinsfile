@@ -20,7 +20,7 @@ pipeline {
             steps{
                 echo "DIRECTORY is: ${env.DIRECTORY}"
                 sh "cd /Users/kayarci/Desktop/blitzApp/blitzapp"
-                sh "flutter build web"
+                sh "${env.FLUTTER_HOME}/flutter build web"
             }
         }
        
