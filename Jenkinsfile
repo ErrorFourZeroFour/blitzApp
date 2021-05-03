@@ -12,7 +12,7 @@ pipeline {
          stage ('Flutter Doctor') {
             steps {
                 echo "FLUTTER_HOME is: ${env.FLUTTER_HOME}"
-                sh '${env.FLUTTER_HOME}/flutter doctor -v'
+                sh "${env.FLUTTER_HOME}/flutter doctor -v"
             }
         }
         
